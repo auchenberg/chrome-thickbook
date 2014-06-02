@@ -29,7 +29,6 @@
 	var isMeasureInInches = textDimensions.indexOf('inches') > -1;
 	var dimensionsMatches = textDimensions.match(/(\d+(\.\d{1,})?)/g);
 
-	console.log('dimensionsMatches',dimensionsMatches);
 	if(isKindle) {
 		console.log('amazon.book.kindle', true);
 		bookHeight = 0.00762 * numberOfPages; // Use number of pages to base the height
@@ -45,6 +44,8 @@
 	}
 
 	console.log('amazon.book.bookHeight', bookHeight);
+
+	// Calculcate paperclip height
 	paperClipScale = 120 * ((paperClipOriginalHeight / bookHeight));				
 
 	// Reading time
