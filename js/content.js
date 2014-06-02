@@ -83,11 +83,6 @@
 		elmInfo.style.height = paperClipScale + 40 + 'px';
 	}
 
-	var mainImageWidth = document.querySelector('#holderMainImage img').width;
-	if(mainImageWidth) {
-		elmInfo.style.width = mainImageWidth + 'px';
-	}
-
 	// Insert After
 	elmParent.insertBefore(elmInfo, elmImageBlock.nextSibling);
 
