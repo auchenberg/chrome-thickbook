@@ -10,7 +10,8 @@
   },
   "permissions": [
     "contentSettings",
-    "http://www.amazon.com/*"
+    "http://www.amazon.com/*",
+    "http://www.amazon.co.uk/*"
   ],
   "web_accessible_resources": [
     "paperclip.svg",
