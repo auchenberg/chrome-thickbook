@@ -32,7 +32,6 @@
 	if(isKindle) {
 		console.log('amazon.book.kindle', true);
 		bookHeight = 0.00762 * numberOfPages; // Use number of pages to base the height
-
 	} else {
 		if(dimensionsMatches.length) {
 			bookHeight = dimensionsMatches[2];
@@ -46,7 +45,7 @@
 	console.log('amazon.book.bookHeight', bookHeight);
 
 	// Calculcate paperclip height
-	paperClipScale = 120 * ((paperClipOriginalHeight / bookHeight));				
+	var paperClipScale = 120 * ((paperClipOriginalHeight / bookHeight));				
 
 	// Reading time
 	var timeInSeconds = numberOfPages * 42 // 7 minutes to read one page;
@@ -55,7 +54,7 @@
 	var roundedHours = Math.floor(timeInHours);
 	var quateredMinutes = (Math.round(timeInMinutes/30) * 30);
 
-	var time = roundedHours + (quateredMinutes === 60 ? '½' : '') + ' hours ';
+	var time = roundedHours + (quateredMinutes === 60 ? '½' : '') + ' hours';
 
 	if(roundedHours === 0) {
 		time = (Math.round(timeInMinutes/15) * 15) + ' minutes';
@@ -65,15 +64,15 @@
 	console.log('amazon.book.time', time);
 
 	// Inject block
-	var elmImageBlock = document.querySelector('#imageBlock, #main-image-widget');
+	var elmImageBlock = document.querySelector('#imageBlockThumbs, #main-image-widget');
 	var elmParent = elmImageBlock.parentNode;
 
 	var content = '<img class="paperclip" style="height:' + paperClipScale + 'px;" src=" ' +chrome.extension.getURL("paperclip.svg") + '" />' + 
 				  '<div class="info">' +
-				  '<div>' +
-				  	'<div class="time">' + time + '</div>' +
-				  	'<div class="pages">(' + numberOfPages + ' pages)</div>';
-				  '</div>';
+						'<div>' +
+					  		'<div class="time">' + time + '</div>' +
+					  		'<div class="pages">(' + numberOfPages + ' pages)</div>';
+					  	'</div>';
 				  '</div>';
 
 	var elmInfo = document.createElement('div');
@@ -81,7 +80,8 @@
 	elmInfo.innerHTML = content;
 
 	if(paperClipScale > 120) {
-		elmInfo.style.height = paperClipScale + 40 + 'px';
+		elmInfo.style.height = paperClipScale + 'px';
+		elmInfo.classList.add('style-high');
 	}
 
 	// Insert After
