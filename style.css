@@ -1,0 +1,53 @@
+.book-reading-info {
+
+	width: 100%;
+	color: #86888b;
+	line-height: 24px;
+	position: relative;
+
+	min-height: 140px;
+
+}
+
+.book-reading-info .paperclip {
+	margin-right: 20px;
+
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+}
+
+.book-reading-info .info {
+	padding: 10px 20px;
+	width: 187px;
+	height: 120px;
+
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+
+  	background-image: url(chrome-extension://__MSG_@@extension_id__/bg.png);
+  	background-repeat: no-repeat;
+	background-size: contain;
+
+	text-align: left;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-family: helvetica;
+	font-weight: 100;
+}
+
+.book-reading-info .info .time {
+	font-size: 20px;
+}
+
+.book-reading-info .info .pages {
+	font-size: 16px;
+}

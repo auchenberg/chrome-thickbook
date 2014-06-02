@@ -1,8 +1,8 @@
 {
-  "name": "Politiken.dk paywall remover",
-  "version": "0.0.2",
+  "name": "ThickBook",
+  "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension removes the paywall on politiken.dk",
+  "description": "How thick is that book?",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -10,18 +10,25 @@
   },
   "permissions": [
     "contentSettings",
-    "http://politiken.dk/*",
-    "https://politiken.dk/*"
+    "http://www.amazon.com/*"
+  ],
+  "web_accessible_resources": [
+    "paperclip.svg",
+    "style.css",
+    "bg.png"
   ],
   "content_scripts": [
     {
       "matches": [
-        "http://politiken.dk/*",
-        "https://politiken.dk/*"
+        "http://www.amazon.com/*"
       ],
       "js": [
         "js/content.js"
-      ]
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_end"
     }
   ]
 }
